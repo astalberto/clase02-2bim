@@ -62,7 +62,13 @@ class Serie(Base):
             return promedio
         else:
             return 0
-
+        
+    def obtener_premios(self):
+        premios = [p.nombre_premio for p in self.premios]
+        if len(premios)>0:
+            return len(premios)
+        else:
+            return 0    
 
 class Actor(Base):
     __tablename__ = 'actor'

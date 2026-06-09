@@ -11,7 +11,7 @@ engine = create_engine(cadena_base_datos)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-series = session.query(Serie).order_by(Serie.titulo).all()
+series = session.query(Serie).all()
 
 for s in series:
-    print("Titulo : %s - Promedio Edad: %s" % (s.titulo, s.obtener_edad_actores()))
+    print("Titulo : %s - Promedio Edad: %s Premios: %s" % (s.titulo, s.obtener_edad_actores(), s.obtener_premios()))
